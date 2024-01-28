@@ -9,6 +9,8 @@ ENV CONFIG_NAME=server-settings.json
 ENV SERVER_DEF_NAME=MyServer
 ENV SERVER_DEF_PASSWORD=MyPassword
 
+EXPOSE 34197/udp
+
 WORKDIR /app
 COPY server-settings.example.json .
 COPY startup.sh .

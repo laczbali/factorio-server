@@ -24,4 +24,6 @@ If a config file is not provided by the user, the startup script will create one
 
 If it doesn't already exist, the startup script will create a `mods` folder at the same location, which will be used by the server.
 
-If the server needs a version update, simply run steps `4 -> 5 -> 3`. The script will download the latest stable version.
+If the server needs a version update, simply run steps `5 -> 3`. The script will download the latest stable version.
+
+Factorio uses UDP port 34197.

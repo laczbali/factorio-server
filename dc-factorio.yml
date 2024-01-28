@@ -1,0 +1,14 @@
+version: '3'
+name: 'factorio'
+
+services:
+  factorio:
+    build: https://github.com/laczbali/factorio-server.git
+    restart: unless-stopped
+    ports:
+      - "34197:34197"
+    environment:
+      SERVER_DEF_NAME: MyServer
+      SERVER_DEF_PASSWORD: MyPassword
+    volumes:
+      - /home/USER/factoriodata:/gamedata

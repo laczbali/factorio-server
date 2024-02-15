@@ -13,7 +13,10 @@ Mod setup guide is [here](https://forums.factorio.com/viewtopic.php?t=38510)
    3. (optional) Set `SAVEGAME_NAME` as desired
 3. Run it with `docker compose -f dc-factorio-yml up --detach`
 4. Stop it with `docker container stop factorio-factorio-1` (you can restart it with `docker container start factorio-factorio-1`)
-5. To remove the composition, run `docker compose -f dc-factorio.yml down --rmi all`
+
+If you need to update the server version:
+1. Remove the composition by running `docker compose -f dc-factorio.yml down --rmi all`
+2. Set up the composition again (step #3 from before)
 
 # Notes
 The save data will be stored at the place you set in step 2.2.

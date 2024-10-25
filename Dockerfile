@@ -19,7 +19,7 @@ CMD /app/startup.sh
 
 # download and install latest factorio
 WORKDIR /opt
-RUN curl -L "https://factorio.com/get-download/stable/headless/linux64" -o "factorio.tar.xz"
+ADD "https://factorio.com/get-download/stable/headless/linux64" "factorio.tar.xz"
 RUN tar -xJf factorio.tar.xz
 RUN rm factorio.tar.xz
 

@@ -11,12 +11,12 @@ Mod setup guide is [here](https://forums.factorio.com/viewtopic.php?t=38510)
    1. Change `SERVER_DEF_NAME` and `SERVER_DEF_PASSWORD` as desired
    2. Change `/home/USER/factoriodata` as desired
    3. (optional) Set `SAVEGAME_NAME` as desired
-3. Run it with `docker compose -f dc-factorio-yml up --detach`
-4. Stop it with `docker container stop factorio-factorio-1` (you can restart it with `docker container start factorio-factorio-1`)
+3. Run it with `sudo docker compose -f dc-factorio.yml up --detach`
+4. If needed, you can stop it with `docker container stop factorio-factorio-1` and restart it with `docker container start factorio-factorio-1`, but it shouldn't be needed.
 
 If you need to update the server version:
-1. Remove the composition by running `docker compose -f dc-factorio.yml down --rmi all`
-2. Set up the composition again (step #3 from before)
+1. Remove the composition by running `sudo docker compose -f dc-factorio.yml down --rmi all`
+2. Create the composition again with `docker compose -f dc-factorio.yml up --detach`
 
 # Notes
 The save data will be stored at the place you set in step 2.2.
@@ -26,7 +26,5 @@ The same location needs to have the server config file (with a name of `server-s
 If a config file is not provided by the user, the startup script will create one with default settings.
 
 If it doesn't already exist, the startup script will create a `mods` folder at the same location, which will be used by the server.
-
-If the server needs a version update, simply run steps `5 -> 3`. The script will download the latest stable version.
 
 Factorio uses UDP port 34197.
